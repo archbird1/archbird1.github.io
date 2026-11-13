@@ -1,0 +1,264 @@
+:root {
+  color-scheme: dark;
+
+  --background: #081916;
+  --surface: #10231F;
+  --surface-raised: #17302A;
+
+  --text: #E5EEE8;
+  --text-muted: #9BAFA5;
+
+  --accent: #55D6C0;
+  --accent-hover: #82E6D5;
+  --amber: #D4A45F;
+
+  --line: #29463B;
+
+  --content-width: 760px;
+  --page-gutter: clamp(22px, 5vw, 64px);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: var(--background);
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: var(--background);
+  color: var(--text);
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+  text-underline-offset: 4px;
+}
+
+a:hover {
+  color: var(--accent-hover);
+  text-decoration: underline;
+}
+
+a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+/* SITE HEADER */
+
+.site-header {
+  width: 100%;
+  border-bottom: 1px solid var(--line);
+}
+
+.site-header-inner {
+  width: min(
+    100% - (var(--page-gutter) * 2),
+    1120px
+  );
+  min-height: 76px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.site-brand {
+  color: var(--text);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.site-brand:hover {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.site-nav a {
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 650;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.site-nav a:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+/* LEGAL PAGE */
+
+.legal-page {
+  width: min(
+    100% - (var(--page-gutter) * 2),
+    var(--content-width)
+  );
+  margin: 0 auto;
+  padding: clamp(48px, 8vw, 88px) 0 64px;
+}
+
+.legal-page .crumb {
+  margin-bottom: 42px;
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.legal-page .crumb a {
+  color: var(--accent);
+}
+
+.legal-page h1 {
+  margin: 0;
+  color: var(--text);
+  font-size: clamp(28px, 5vw, 40px);
+  font-weight: 750;
+  letter-spacing: 2px;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.legal-page .note {
+  margin: 16px 0 56px;
+  color: var(--text-muted);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.legal-page section {
+  margin: 0 0 42px;
+}
+
+.legal-page section h2 {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin: 0 0 18px;
+  color: var(--accent);
+  font-size: 12px;
+  font-weight: 750;
+  letter-spacing: 2px;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.legal-page section h2::after {
+  content: "";
+  height: 1px;
+  flex: 1;
+  background: var(--line);
+}
+
+.legal-page section p {
+  margin: 0 0 16px;
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.legal-page section ul {
+  margin: 12px 0 20px;
+  padding-left: 24px;
+}
+
+.legal-page section li {
+  margin: 8px 0;
+  padding-left: 4px;
+  color: var(--text);
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.legal-page section li::marker {
+  color: var(--amber);
+}
+
+/* FOOTER */
+
+.legal-page footer {
+  margin-top: 64px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  color: var(--text-muted);
+  font-size: 12px;
+  letter-spacing: 0.4px;
+}
+
+.legal-page footer a {
+  color: var(--text-muted);
+}
+
+.legal-page footer a:hover {
+  color: var(--accent);
+}
+
+/* MOBILE */
+
+@media (max-width: 560px) {
+  .site-header-inner {
+    min-height: 68px;
+  }
+
+  .site-nav {
+    gap: 16px;
+  }
+
+  .site-nav a {
+    font-size: 10px;
+    letter-spacing: 1px;
+  }
+
+  .legal-page {
+    padding-top: 44px;
+  }
+
+  .legal-page .crumb {
+    margin-bottom: 32px;
+  }
+
+  .legal-page .note {
+    margin-bottom: 42px;
+  }
+
+  .legal-page section {
+    margin-bottom: 34px;
+  }
+
+  .legal-page footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
