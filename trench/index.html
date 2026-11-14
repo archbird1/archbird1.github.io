@@ -1,77 +1,134 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#091a17">
-  <meta name="description" content="TRENCH: Notes Board — A place to put things, and see how they connect.">
-  <title>TRENCH: Notes Board — Lohm Lab</title>
-  <link rel="stylesheet" href="/assets/site.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TRENCH: Notes Board | Lohm Lab</title>
+<meta name="description" content="TRENCH is a free notes app for Android built around a board, with folders, drawings, search and PIN locks. No ads, no accounts, fully offline.">
+<link rel="canonical" href="https://lohm.dev/trench/">
+<meta name="theme-color" content="#091A17">
+<meta property="og:site_name" content="Lohm Lab">
+<meta property="og:type" content="website">
+<meta property="og:title" content="TRENCH: Notes Board | Lohm Lab">
+<meta property="og:description" content="TRENCH is a free notes app for Android built around a board, with folders, drawings, search and PIN locks. No ads, no accounts, fully offline.">
+<meta property="og:url" content="https://lohm.dev/trench/">
+<meta property="og:image" content="https://lohm.dev/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Lohm Lab. Ideas into instruments.">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/site.css">
 </head>
-<body>
-<header class="site-header">
-  <div class="container header-inner">
-    <a class="brand" href="/" aria-label="Lohm Lab home">Lohm <span class="brand-mark">Lab</span></a>
-    <nav class="nav" aria-label="Main navigation">
-      <a href="/#apps">Apps</a>
-      <a href="/#about">About</a>
-      <a class="contact-link" href="mailto:apps@lohm.dev">Get in touch</a>
-    </nav>
-  </div>
+<body class="theme-trench">
+<a class="skip" href="#main">Skip to content</a>
+<header class="wrap masthead">
+  <a class="masthead-name" href="/">Lohm <span>Lab</span></a>
+  <nav aria-label="Main">
+    <a href="/#studio">Studio</a>
+    <a href="/#work">Apps</a>
+    <a href="/#workshop">Workshop</a>
+    <a class="pill" href="mailto:apps@lohm.dev">Get in touch</a>
+  </nav>
 </header>
-<main>
-  <section class="product-hero">
-    <div class="container">
-      <div class="breadcrumb"><a href="/">Lohm Lab</a> &nbsp;/&nbsp; TRENCH</div>
-      <div class="product-hero-grid">
-        <div>
-          <p class="eyebrow">Notes / Organization</p>
-          <h1>TRENCH</h1>
-          <p class="product-subtitle">A place to put things, and see how they connect.</p>
-          <p class="product-description">TRENCH is a notes app built around a board. Pin notes where you can see them, sort deeper collections into folders, and move between quick thoughts and bigger structures without losing the thread.</p>
-          <div class="product-meta"><span class="meta-chip">Android</span><span class="meta-chip">In development</span><span class="meta-chip">Free · No ads</span></div>
-        </div>
-        <div class="visual-panel" aria-hidden="true"><span class="visual-glyph">⌑</span><span class="visual-caption">Collect. Arrange. Explore.</span></div>
-      </div>
+<main id="main" class="wrap">
+  <p class="crumb"><a href="/">Lohm Lab</a> / TRENCH</p>
+  <section class="plate">
+    <div>
+      <h1>TRENCH</h1>
+      <p class="kind">Notes Board</p>
+      <p class="lead">A notes app built around a board. Pin notes where you can see them, and file the rest in folders as deep as you like.</p>
+      <p class="plate-status">In development</p>
+    </div>
+    <img src="/assets/icons/trench.png" alt="" width="176" height="176">
+  </section>
+  <section class="band">
+    <h2>At a glance</h2>
+    <div class="band-body">
+      <dl class="facts">
+        <dt>Status</dt><dd class="status">In development. Not yet on Google Play.</dd>
+        <dt>Platform</dt><dd>Android</dd>
+        <dt>Price</dt><dd>Free. No ads and no in-app purchases.</dd>
+        <dt>Account</dt><dd>None. There is nothing to sign up for.</dd>
+        <dt>Internet</dt><dd>Never used. The app has no permission to go online.</dd>
+        <dt>Permissions</dt><dd>Camera, only when you take a photo for an image note. Screen lock or fingerprint, only for &ldquo;Forgot PIN?&rdquo;.</dd>
+        <dt>Screen</dt><dd>Portrait and landscape</dd>
+        <dt>Your data</dt><dd>Stays on your phone. You can export everything to a backup file and import it again.</dd>
+      </dl>
     </div>
   </section>
-  <section class="product-section">
-    <div class="container">
-      <p class="section-kicker">About TRENCH</p>
-      <h2>Made for the way you use it.</h2>
-      <p class="lead">TRENCH gives different kinds of notes a shared home: text, image, drawing, and counter notes. A board offers a visual starting point, while nested folders and search help keep larger collections navigable.</p>
-      <div class="feature-grid"><article class="feature"><span class="feature-number">01</span><h3>A board with room to move</h3><p>Pin notes and folders as cards. Move the floating add control where it suits your layout, and choose from seven shapes.</p></article><article class="feature"><span class="feature-number">02</span><h3>Structure when you need it</h3><p>Nest folders as deeply as you like, reorder them, and use tags, colors, and categories to make collections easier to scan.</p></article><article class="feature"><span class="feature-number">03</span><h3>Explore what you've made</h3><p>Use Sonar search, folder family trees, and comments to find notes and understand how everything is arranged.</p></article></div>
+  <section class="band">
+    <h2>What it does</h2>
+    <div class="band-body">
+      <h3>Notes</h3>
+      <ul>
+        <li>Four kinds: Text, Image, Canvas for drawing, and Counter.</li>
+        <li>Tags, colors and comments on anything.</li>
+      </ul>
+      <h3>The board</h3>
+      <ul>
+        <li>A bulletin board of pinned cards for notes and folders.</li>
+        <li>The add button floats. Drag it wherever suits your thumb, and choose one of seven shapes for it.</li>
+        <li>Filter the board by tag or by color.</li>
+      </ul>
+      <h3>Folders</h3>
+      <ul>
+        <li>Folders inside folders, as deep as you like. Drag to reorder, or drop one into another.</li>
+        <li>Folder categories with around 50 icons.</li>
+        <li>Family tree: a top-down chart of everything inside a folder. Pinch to zoom.</li>
+      </ul>
+      <h3>Finding and keeping</h3>
+      <ul>
+        <li>Sonar: a search drawer that looks through titles, note text, comments and tags.</li>
+        <li>Locks: put any note or folder behind a PIN. You choose whether one entry unlocks just that item or everything, and how long it stays unlocked.</li>
+        <li>Recovery: deleted items wait 16 days before they are gone for good.</li>
+        <li>23 color palettes and 6 fonts.</li>
+      </ul>
     </div>
   </section>
-  <section class="product-section">
-    <div class="container">
-      <p class="section-kicker">Inside the app</p>
-      <h2>Thoughtful details. Practical tools.</h2>
-      <div class="details-grid" style="margin-top:28px"><div class="detail-block"><h3>Four note types</h3><ul><li>Text notes for writing and keeping information.</li><li>Image notes for photographs and visual references.</li><li>Canvas notes for freehand drawings.</li><li>Counter notes for tracking quantities.</li></ul></div><div class="detail-block"><h3>Organization and control</h3><ul><li>Drag notes and folders around the board; nest folders inside one another.</li><li>Filter the board by tag or color; use folder categories and icons.</li><li>View a top-down family tree of a folder's contents and pinch to zoom.</li><li>Search titles, note text, comments, and tags with Sonar.</li><li>Put a note or folder behind a PIN and choose its unlock behavior.</li><li>Deleted items remain recoverable for 16 days before permanent deletion.</li><li>Export and import backups; choose from 23 palettes and six fonts.</li></ul></div></div>
-      <div class="note-panel">The PIN feature is an access-control convenience, not encryption. Do not use it as a substitute for encrypted storage or a dedicated password manager.</div>
+  <section class="band">
+    <h2>What it isn’t</h2>
+    <div class="band-body">
+      <p>The lock is not encryption. It hides an item behind a PIN inside the app, which is enough to stop a glance over your shoulder. It is not a vault, and it is no place for passwords.</p>
+      <p>TRENCH does not sync between devices. To move your notes, export a backup and import it on the other phone.</p>
     </div>
   </section>
-  <section class="product-section">
-    <div class="container">
-      <div class="product-cta">
-        <div><p class="section-kicker">A Lohm Lab product</p><h2>Simple by intention.</h2><p>Free to use, with no ads and no accounts. The app works offline. Camera access is only used when taking a photo for an image note; biometric or screen-lock access is only used for the “Forgot PIN?” recovery flow.</p></div>
-        <a class="text-link" href="/#apps">Explore the other apps</a>
-      </div>
-      <div class="legal-links">
+  <section class="band">
+    <h2>Documents</h2>
+    <div class="band-body">
+      <p class="doclinks">
         <a href="/trench/privacy/">Privacy Policy</a>
         <a href="/trench/terms/">Terms of Use</a>
-      </div>
+      </p>
+    </div>
+  </section>
+  <section class="band">
+    <h2>Other apps</h2>
+    <div class="band-body">
+      <ul class="others">
+        <li><a href="/clk-01/">
+          <img src="/assets/icons/clk-01.png" alt="" width="44" height="44">
+          <span><strong>CLK-01</strong>Chess Clock</span>
+        </a></li>
+        <li><a href="/hitherto/">
+          <img src="/assets/icons/hitherto.png" alt="" width="44" height="44">
+          <span><strong>HITHERTO</strong>Bible Tracker</span>
+        </a></li>
+      </ul>
     </div>
   </section>
 </main>
-<footer class="site-footer">
-  <div class="container footer-inner">
-    <span>© 2026 Lohm Lab</span>
-    <div class="footer-links">
-      <a href="/#apps">Apps</a>
-      <a href="mailto:apps@lohm.dev">apps@lohm.dev</a>
-    </div>
-  </div>
+<footer class="wrap colophon">
+  <span>&copy; 2026 Lohm Lab</span>
+  <nav aria-label="Footer">
+    <a href="/#studio">Studio</a>
+    <a href="/#work">Apps</a>
+    <a href="/#workshop">Workshop</a>
+    <a href="mailto:apps@lohm.dev">apps@lohm.dev</a>
+  </nav>
 </footer>
 </body>
 </html>

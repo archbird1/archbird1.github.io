@@ -1,116 +1,964 @@
-:root{
-  color-scheme:dark;
-  --bg:#091a17;
-  --surface:#10241f;
-  --surface-2:#163029;
-  --ink:#e6eee8;
-  --muted:#a0b2a8;
-  --faint:#71877c;
-  --accent:#73cdb5;
-  --accent-strong:#9be2ce;
-  --amber:#d6ad70;
-  --line:#29483d;
-  --max:1120px;
-  --radius:18px;
+/* Lohm Lab — lohm.dev
+   One stylesheet for every page. The legal pages add /legal.css on top.
+
+   The homepage is the Lab: the studio's own dark green look. One section
+   of it, the workshop, has dot-grid paper and handwritten notes.
+   Each app page opens in that app's default colors and typeface, then
+   settles back into studio green with the app's accent.
+
+   Type: Bricolage Grotesque for the studio, Architects Daughter for the
+   handwritten notes, and each app's own face on its own page.
+   All are hosted in /assets/fonts with their licenses. */
+
+@font-face {
+  font-family: "Bricolage Grotesque";
+  src: url("/assets/fonts/bricolage-grotesque-latin.woff2") format("woff2");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
 }
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:100px}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.65;-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}
-a:hover{color:var(--accent-strong)}
-button,a{-webkit-tap-highlight-color:transparent}
-.container{width:min(var(--max),calc(100% - 48px));margin-inline:auto}
-.site-header{position:sticky;top:0;z-index:20;background:rgba(9,26,23,.94);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.header-inner{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.brand{font-size:1.08rem;font-weight:680;letter-spacing:-.045em}
-.brand-mark{color:var(--accent)}
-.nav{display:flex;align-items:center;gap:30px;color:var(--muted);font-size:.83rem}
-.nav a{transition:color .18s}
-.nav a:hover,.nav a[aria-current="page"]{color:var(--ink)}
-.nav .contact-link{color:var(--accent);border:1px solid var(--line);padding:8px 13px;border-radius:999px}
-.menu-toggle{display:none}
-.eyebrow{margin:0 0 20px;color:var(--accent);font-size:.72rem;font-weight:700;letter-spacing:.19em;text-transform:uppercase}
-.hero{padding:116px 0 104px;position:relative}
-.hero:after{content:"";position:absolute;width:340px;height:340px;border:1px solid rgba(115,205,181,.13);border-radius:50%;right:7%;top:76px;pointer-events:none}
-.hero:before{content:"";position:absolute;width:220px;height:220px;border:1px solid rgba(115,205,181,.1);border-radius:50%;right:12.4%;top:136px;pointer-events:none}
-.hero h1{max-width:850px;margin:0;font-size:clamp(3.5rem,8vw,7rem);font-weight:570;letter-spacing:-.078em;line-height:.98}
-.hero h1 span{color:var(--accent)}
-.hero-copy{max-width:560px;margin:30px 0 0;color:var(--muted);font-size:1.08rem}
-.hero-meta{display:flex;gap:28px;flex-wrap:wrap;margin-top:40px;color:var(--faint);font-size:.73rem;letter-spacing:.11em;text-transform:uppercase}
-.section{padding:76px 0;border-top:1px solid var(--line)}
-.section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;margin-bottom:28px}
-.section-kicker{color:var(--accent);font-size:.7rem;font-weight:700;letter-spacing:.17em;text-transform:uppercase}
-h2{font-size:clamp(1.8rem,3vw,2.5rem);line-height:1.12;letter-spacing:-.055em;font-weight:570;margin:8px 0 0}
-.section-note{max-width:330px;color:var(--muted);font-size:.86rem;margin:0}
-.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.product-card{min-height:300px;padding:26px;display:flex;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);transition:border-color .2s,transform .2s}
-.product-card:hover{border-color:var(--accent);transform:translateY(-3px)}
-.card-top{display:flex;justify-content:space-between;align-items:center;color:var(--faint);font-size:.68rem;letter-spacing:.13em;text-transform:uppercase}
-.card-symbol{width:42px;height:42px;border:1px solid var(--line);border-radius:12px;display:grid;place-items:center;color:var(--accent);font-size:1.1rem}
-.product-card h3{font-size:1.65rem;letter-spacing:-.055em;margin:30px 0 8px}
-.product-card p{color:var(--muted);font-size:.9rem;margin:0;max-width:290px}
-.card-bottom{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:auto;padding-top:28px}
-.status{color:var(--amber);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase}
-.text-link{color:var(--accent);font-size:.82rem}
-.text-link:after{content:" ↗";transition:transform .2s}
-.text-link:hover:after{display:inline-block;transform:translate(3px,-2px)}
-.principles{display:grid;grid-template-columns:1.1fr 1fr;gap:70px;align-items:start}
-.principles-copy{max-width:540px;color:var(--muted);font-size:1rem}
-.principles-list{border-top:1px solid var(--line)}
-.principle{display:flex;justify-content:space-between;gap:20px;padding:17px 0;border-bottom:1px solid var(--line);font-size:.9rem}
-.principle span:last-child{color:var(--muted);text-align:right}
-.site-footer{border-top:1px solid var(--line);padding:28px 0;color:var(--faint);font-size:.78rem}
-.footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
-.footer-links{display:flex;gap:22px;flex-wrap:wrap}
-.footer-links a:hover{color:var(--ink)}
-/* Product pages */
-.product-hero{padding:86px 0 74px;border-bottom:1px solid var(--line)}
-.breadcrumb{font-size:.76rem;color:var(--faint);margin-bottom:46px}
-.breadcrumb a{color:var(--muted)}
-.product-hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center}
-.product-hero h1{font-size:clamp(3.4rem,7vw,6.1rem);line-height:.94;letter-spacing:-.08em;font-weight:590;margin:0}
-.product-subtitle{font-size:1.15rem;color:var(--accent);margin:18px 0 0;letter-spacing:-.02em}
-.product-description{max-width:600px;color:var(--muted);font-size:1rem;margin:24px 0 0}
-.product-meta{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
-.meta-chip{border:1px solid var(--line);border-radius:999px;padding:7px 12px;color:var(--muted);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase}
-.visual-panel{min-height:270px;border:1px solid var(--line);border-radius:24px;background:linear-gradient(145deg,rgba(22,48,41,.85),rgba(16,36,31,.6));display:grid;place-items:center;position:relative;overflow:hidden}
-.visual-panel:before,.visual-panel:after{content:"";position:absolute;border:1px solid rgba(115,205,181,.2);border-radius:50%;width:220px;height:220px}
-.visual-panel:after{width:310px;height:310px}
-.visual-glyph{position:relative;z-index:1;color:var(--accent);font-size:5rem;font-weight:300;letter-spacing:-.08em}
-.visual-caption{position:absolute;bottom:18px;left:20px;color:var(--faint);font-size:.65rem;letter-spacing:.15em;text-transform:uppercase}
-.product-section{padding:66px 0;border-bottom:1px solid var(--line)}
-.product-section h2{font-size:2rem;margin:0 0 16px}
-.lead{max-width:760px;color:var(--muted);font-size:1.03rem;margin:0}
-.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:30px}
-.feature{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:21px}
-.feature-number{font-size:.67rem;color:var(--accent);letter-spacing:.14em}
-.feature h3{font-size:1rem;letter-spacing:-.025em;margin:13px 0 7px}
-.feature p{font-size:.84rem;color:var(--muted);margin:0}
-.details-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px}
-.detail-block h3{font-size:.75rem;color:var(--accent);letter-spacing:.15em;text-transform:uppercase;margin:0 0 14px}
-.detail-block p,.detail-block li{color:var(--muted);font-size:.9rem}
-.detail-block ul{padding-left:19px;margin:0}
-.detail-block li+li{margin-top:7px}
-.note-panel{padding:22px 24px;border-left:2px solid var(--amber);background:rgba(214,173,112,.06);color:var(--muted);font-size:.86rem;margin-top:26px}
-.legal-links{display:flex;gap:22px;flex-wrap:wrap;margin-top:18px;font-size:.83rem}
-.legal-links a{color:var(--accent)}
-.product-cta{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:30px;border:1px solid var(--line);border-radius:18px;background:var(--surface)}
-.product-cta p{margin:6px 0 0;color:var(--muted);font-size:.86rem}
-@media(max-width:800px){
- .hero{padding:90px 0 82px}.hero:before,.hero:after{right:-100px;opacity:.5}
- .product-grid{grid-template-columns:1fr}.product-card{min-height:240px}
- .principles,.product-hero-grid,.details-grid{grid-template-columns:1fr;gap:30px}
- .visual-panel{min-height:220px;grid-row:1}
- .feature-grid{grid-template-columns:1fr 1fr}
- .section-head{align-items:flex-start;flex-direction:column}
+
+@font-face {
+  font-family: "Architects Daughter";
+  src: url("/assets/fonts/architects-daughter-latin.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
 }
-@media(max-width:560px){
- .container{width:min(var(--max),calc(100% - 36px))}
- .header-inner{height:66px}.nav{gap:15px;font-size:.76rem}.nav .contact-link{padding:6px 10px}
- .hero{padding:78px 0 70px}.hero h1{font-size:clamp(3.2rem,16vw,5rem)}.hero-copy{font-size:.98rem}
- .section{padding:58px 0}.feature-grid{grid-template-columns:1fr}
- .product-hero{padding:58px 0}.breadcrumb{margin-bottom:34px}
- .product-hero h1{font-size:clamp(3.3rem,17vw,5rem)}
- .product-cta{align-items:flex-start;flex-direction:column}
- .footer-inner{align-items:flex-start;flex-direction:column}
+
+@font-face {
+  font-family: "Droid Sans Mono";
+  src: url("/assets/fonts/droid-sans-mono-latin.woff2") format("woff2");
+  font-weight: 400;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lora";
+  src: url("/assets/fonts/lora-latin.woff2") format("woff2");
+  font-weight: 400 700;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Lexend";
+  src: url("/assets/fonts/lexend-latin.woff2") format("woff2");
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+:root {
+  color-scheme: dark;
+
+  /* Studio color */
+  --bg: #091A17;             /* deep green-black */
+  --surface: #10241F;        /* cards */
+  --surface-2: #163029;      /* raised detail */
+  --line: #29483D;           /* rules and borders */
+  --ink: #E6EEE8;            /* text */
+  --muted: #A0B2A8;          /* secondary text */
+  --accent: #73CDB5;         /* sea green: the studio's color */
+  --accent-strong: #9BE2CE;  /* hover */
+  --amber: #D6AD70;          /* status and small marks only */
+
+  /* Type */
+  --font: "Bricolage Grotesque", system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, sans-serif;
+  --hand: "Architects Daughter", "Bradley Hand", "Segoe Print", cursive;
+
+  /* Space */
+  --page: 70rem;
+  --gutter: clamp(1.25rem, 5vw, 3.5rem);
+  --radius: 18px;
+  --measure: 36rem;
+  --side: 13rem;
+  --gap: clamp(3.5rem, 8vw, 6rem);
+}
+
+/* Each app's default look, copied from the apps. */
+
+.theme-clk-01 {
+  --p-bg: #041014;
+  --p-text: #E8FFFD;
+  --p-dim: #7FA8AB;
+  --p-accent: #3FF2FF;
+  --p-line: #1C5C66;
+  --p-font: "Droid Sans Mono", ui-monospace, Menlo, monospace;
+  --p-weight: 400;
+  --p-radius: 2px;
+  --accent: #12B5A5;
+  --accent-strong: #3FF2FF;
+}
+
+.theme-hitherto {
+  --p-bg: #EEE4D2;
+  --p-text: #33241A;
+  --p-dim: #725F4C;
+  --p-accent: #6A3812;
+  --p-line: #C4AF8D;
+  --p-font: "Lora", Georgia, serif;
+  --p-weight: 600;
+  --p-radius: 18px;
+  --accent: #D7C5A7;
+  --accent-strong: #EEE4D2;
+}
+
+.theme-trench {
+  --p-bg: #0B1020;
+  --p-text: #E6F0FF;
+  --p-dim: #93A0BF;
+  --p-accent: #3DF5A5;
+  --p-line: #2A3454;
+  --p-font: "Lexend", system-ui, sans-serif;
+  --p-weight: 600;
+  --p-radius: 18px;
+  --accent: #3DF5A5;
+  --accent-strong: #E6F0FF;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  background: var(--bg);
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 2rem;
+}
+
+body {
+  position: relative;
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: var(--font);
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* A soft sea-green glow behind the top of the homepage. */
+body.home {
+  background-image: radial-gradient(52rem 38rem at 85% 4rem, rgba(115, 205, 181, 0.13), transparent 70%);
+  background-repeat: no-repeat;
+}
+
+/* A little grain over everything, so the dark isn't flat. */
+body::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.06;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='180' height='180' filter='url(%23n)'/></svg>");
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+ol,
+dl,
+dd,
+figure {
+  margin: 0;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+
+a:hover {
+  color: var(--accent-strong);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
+.wrap {
+  width: min(100% - (var(--gutter) * 2), var(--page));
+  margin-inline: auto;
+}
+
+.hand {
+  font-family: var(--hand);
+}
+
+.skip {
+  position: absolute;
+  left: var(--gutter);
+  top: -4rem;
+  z-index: 5;
+  padding: 0.5rem 0.9rem;
+  background: var(--ink);
+  color: var(--bg);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.skip:focus {
+  top: 0.75rem;
+  color: var(--bg);
+}
+
+/* Masthead ----------------------------------------------------------- */
+
+.masthead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-block: 1.35rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.masthead-name {
+  color: var(--ink);
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.masthead-name span {
+  color: var(--accent);
+}
+
+.masthead-name:hover {
+  color: var(--ink);
+}
+
+.masthead nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.35rem 1.6rem;
+}
+
+.masthead nav a,
+.colophon a {
+  color: var(--muted);
+  font-size: 0.9375rem;
+  text-decoration: none;
+}
+
+.masthead nav a:hover,
+.colophon a:hover {
+  color: var(--ink);
+}
+
+.masthead nav a.pill {
+  padding: 0.4rem 0.9rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--accent);
+}
+
+.masthead nav a.pill:hover {
+  border-color: var(--accent);
+  color: var(--accent-strong);
+}
+
+/* Shared small pieces ------------------------------------------------ */
+
+.kicker {
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.section-title {
+  margin-top: 0.6rem;
+  font-size: clamp(1.9rem, 3.6vw, 2.75rem);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+}
+
+.status {
+  color: var(--amber);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
+
+/* Home: top ----------------------------------------------------------- */
+
+.hero {
+  padding-block: clamp(3rem, 8vw, 6rem) var(--gap);
+}
+
+.hero h1 {
+  margin-top: 1.4rem;
+  font-size: clamp(2.8rem, 7.4vw, 5.9rem);
+  font-weight: 600;
+  line-height: 0.97;
+  letter-spacing: -0.03em;
+}
+
+.hero h1 span {
+  display: block;
+  color: var(--accent);
+}
+
+.hero-copy {
+  max-width: 33rem;
+  margin-top: clamp(1.75rem, 4vw, 2.5rem);
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+/* Home: the studio ----------------------------------------------------- */
+
+.story {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 2rem clamp(2rem, 6vw, 5rem);
+  padding-block: var(--gap);
+  border-top: 1px solid var(--line);
+}
+
+.story-text > p {
+  max-width: var(--measure);
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+.story-text .principle-list {
+  margin-top: 2rem;
+}
+
+/* Home: the workshop --------------------------------------------------- */
+
+.workshop {
+  margin-block: 0 var(--gap);
+  padding: clamp(1.5rem, 5vw, 3.5rem);
+  background-color: var(--surface);
+  background-image: radial-gradient(circle at 1px 1px, rgba(160, 178, 168, 0.22) 1px, transparent 1.5px);
+  background-size: 24px 24px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+}
+
+.workshop-head {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 1.5rem clamp(2rem, 6vw, 5rem);
+}
+
+.workshop-note {
+  margin-top: 1rem;
+  color: var(--amber);
+  font-family: var(--hand);
+  font-size: 1.25rem;
+  transform: rotate(-2deg);
+  transform-origin: left;
+}
+
+.workshop-text > * + * {
+  margin-top: 1.1rem;
+}
+
+.workshop-text p {
+  max-width: var(--measure);
+}
+
+.workshop-text p:first-child {
+  font-size: 1.25rem;
+  line-height: 1.5;
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 2rem;
+  margin-top: clamp(2.5rem, 6vw, 4rem);
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
+}
+
+.steps li {
+  position: relative;
+  padding-top: 1.6rem;
+  border-top: 1px solid var(--line);
+  counter-increment: step;
+}
+
+.steps li::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 0;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: 1.5px solid var(--accent);
+}
+
+.steps li:last-child::before {
+  background: var(--amber);
+  border-color: var(--amber);
+}
+
+.steps h3 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.steps h3::before {
+  content: counter(step) ". ";
+  color: var(--amber);
+}
+
+.steps p {
+  margin-top: 0.6rem;
+  color: var(--muted);
+  font-size: 0.975rem;
+}
+
+/* Home: cross, verse, fish ---------------------------------------------- */
+
+.mark {
+  padding-bottom: var(--gap);
+  text-align: center;
+}
+
+.mark svg {
+  display: block;
+  margin-inline: auto;
+}
+
+.mark blockquote {
+  max-width: 34rem;
+  margin: 1.75rem auto 0;
+  font-size: clamp(1.25rem, 2.6vw, 1.6rem);
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+
+.mark cite {
+  display: block;
+  margin-block: 0.9rem 1.75rem;
+  color: var(--muted);
+  font-size: 0.9375rem;
+  font-style: normal;
+}
+
+/* Home: principles ----------------------------------------------------- */
+
+.principle-list {
+  border-top: 1px solid var(--line);
+}
+
+.principle-list div {
+  display: grid;
+  grid-template-columns: 10.5rem minmax(0, 1fr);
+  gap: 1rem;
+  padding-block: 1.05rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.principle-list dt {
+  font-weight: 600;
+}
+
+.principle-list dd {
+  color: var(--muted);
+}
+
+/* Home: the work ------------------------------------------------------- */
+
+.work {
+  padding-block: var(--gap);
+  border-top: 1px solid var(--line);
+}
+
+.work-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: end;
+  justify-content: space-between;
+  gap: 1rem 2rem;
+}
+
+.work-head p:last-child {
+  max-width: 22rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(17rem, 1fr));
+  gap: 1rem;
+  margin-top: 2rem;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  transition: border-color 0.2s, transform 0.2s;
+}
+
+.card:hover,
+.card:focus-within {
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.card a {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 17.5rem;
+  padding: 1.6rem;
+  color: inherit;
+  text-decoration: none;
+  border-radius: inherit;
+}
+
+.card img {
+  width: 3.75rem;
+  height: 3.75rem;
+  border-radius: 22%;
+}
+
+.card h3 {
+  margin-top: 1.5rem;
+  font-size: 1.7rem;
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.015em;
+}
+
+.card .kind {
+  color: var(--accent);
+  font-size: 0.95rem;
+}
+
+.card .what {
+  margin-top: 0.8rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.card .status {
+  margin-top: auto;
+  padding-top: 1.5rem;
+}
+
+.work-more {
+  margin-top: 1.5rem;
+  color: var(--muted);
+  font-family: var(--hand);
+  font-size: 1.1rem;
+}
+
+/* Home: this website --------------------------------------------------- */
+
+.fineprint {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+  gap: 2rem clamp(2rem, 6vw, 5rem);
+  padding-block: var(--gap);
+  border-top: 1px solid var(--line);
+}
+
+/* Facts: a plain two-column list --------------------------------------- */
+
+.facts {
+  display: grid;
+  grid-template-columns: 9.5rem minmax(0, 1fr);
+  max-width: 46rem;
+}
+
+.facts dt,
+.facts dd {
+  padding-block: 0.75rem;
+  border-top: 1px solid var(--line);
+}
+
+.facts dt {
+  color: var(--muted);
+  padding-right: 1rem;
+}
+
+.facts dt:first-of-type,
+.facts dt:first-of-type + dd {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.facts dd.status {
+  font-size: inherit;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+/* App pages ------------------------------------------------------------- */
+
+.crumb {
+  padding-top: 1.5rem;
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+.crumb a {
+  color: var(--muted);
+}
+
+.crumb a:hover {
+  color: var(--ink);
+}
+
+/* The top of an app page, in that app's own colors and type. */
+.plate {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 2rem;
+  align-items: center;
+  margin-top: 1.25rem;
+  padding: clamp(1.75rem, 6vw, 4.5rem) clamp(1.5rem, 5vw, 4rem);
+  background: var(--p-bg);
+  color: var(--p-text);
+  border: 1px solid var(--p-line);
+  border-radius: var(--p-radius);
+}
+
+.plate h1 {
+  font-family: var(--p-font);
+  font-weight: var(--p-weight);
+  font-size: clamp(2.6rem, 9vw, 5.5rem);
+  line-height: 1;
+}
+
+.plate .kind {
+  margin-top: 0.6rem;
+  color: var(--p-accent);
+  font-family: var(--p-font);
+  font-size: clamp(1.1rem, 2.4vw, 1.4rem);
+}
+
+.plate .lead {
+  max-width: 34rem;
+  margin-top: clamp(1.25rem, 3vw, 2rem);
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+.plate .plate-status {
+  margin-top: 1.5rem;
+  color: var(--p-dim);
+  font-size: 0.9375rem;
+}
+
+.plate .plate-status::before {
+  content: "";
+  display: inline-block;
+  width: 0.5rem;
+  height: 0.5rem;
+  margin-right: 0.5rem;
+  border-radius: 50%;
+  background: var(--p-accent);
+}
+
+.plate img {
+  width: clamp(6rem, 16vw, 11rem);
+  height: auto;
+  border-radius: 22%;
+}
+
+.plate + .band {
+  border-top: 0;
+}
+
+/* Bands: a section name on the left, its content on the right ---------- */
+
+.band {
+  display: grid;
+  grid-template-columns: var(--side) minmax(0, 1fr);
+  column-gap: 2rem;
+  padding-block: clamp(2.25rem, 5vw, 3.5rem);
+  border-top: 1px solid var(--line);
+}
+
+.band > h2 {
+  padding-top: 0.25rem;
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.17em;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.band-body > * + * {
+  margin-top: 1.1rem;
+}
+
+.band-body p,
+.band-body ul {
+  max-width: var(--measure);
+}
+
+.band-body h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.35;
+}
+
+.band-body * + h3 {
+  margin-top: 2.5rem;
+}
+
+.band-body h3 + * {
+  margin-top: 0.6rem;
+}
+
+.band-body ul {
+  padding-left: 1.1rem;
+}
+
+.band-body li + li {
+  margin-top: 0.45rem;
+}
+
+.band-body li::marker {
+  color: var(--accent);
+}
+
+.quote {
+  font-size: 1.35rem;
+  line-height: 1.45;
+}
+
+.doclinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 2rem;
+}
+
+/* A plain list of other apps */
+
+.band-body ul.others {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: 1rem;
+  max-width: none;
+  padding: 0;
+  list-style: none;
+}
+
+.others li {
+  margin: 0;
+}
+
+.others a {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.1rem;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  color: var(--ink);
+  text-decoration: none;
+  transition: border-color 0.2s;
+}
+
+.others a:hover {
+  border-color: var(--accent);
+}
+
+.others img {
+  width: 2.75rem;
+  height: 2.75rem;
+  border-radius: 22%;
+}
+
+.others strong {
+  display: block;
+  font-size: 1.15rem;
+  letter-spacing: -0.02em;
+}
+
+.others span {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* Colophon ------------------------------------------------------------- */
+
+.colophon {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.75rem 2rem;
+  padding-block: 1.75rem 2.5rem;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+.colophon nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.75rem;
+}
+
+/* Not found ------------------------------------------------------------ */
+
+.lost {
+  padding-block: clamp(3.5rem, 11vw, 8rem);
+}
+
+.lost h1 {
+  font-size: clamp(2.4rem, 7vw, 4.5rem);
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+
+.lost p {
+  margin-top: 1.5rem;
+  max-width: var(--measure);
+  font-size: 1.25rem;
+}
+
+/* Narrow screens ------------------------------------------------------- */
+
+@media (max-width: 58rem) {
+  .story,
+  .workshop-head,
+  .fineprint {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    row-gap: 2.5rem;
+  }
+
+  .band {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .band > h2 {
+    padding-top: 0;
+    margin-bottom: 1.1rem;
+  }
+
+  .plate {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .plate img {
+    grid-row: 1;
+    width: 5rem;
+  }
+}
+
+@media (max-width: 34rem) {
+  body {
+    font-size: 1rem;
+  }
+
+  .masthead nav {
+    gap: 0.35rem 1rem;
+  }
+
+  /* The email link is in the footer; the pill doesn't fit up here. */
+  .masthead nav a.pill {
+    display: none;
+  }
+
+  .steps {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .principle-list div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.15rem;
+  }
+
+  .hero-copy,
+  .story-text > p,
+  .workshop-text p:first-child,
+  .plate .lead,
+  .lost p {
+    font-size: 1.125rem;
+  }
+
+  .facts {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .facts dt {
+    padding-bottom: 0;
+  }
+
+  .facts dd {
+    border-top: 0;
+    padding-top: 0.15rem;
+  }
+
+  .facts dt:first-of-type + dd {
+    padding-top: 0.15rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .card {
+    transition: none;
+  }
+
+  .card:hover,
+  .card:focus-within {
+    transform: none;
+  }
+}
+
+@media print {
+  html,
+  body {
+    background: #fff;
+    color: #000;
+  }
+
+  body::before,
+  .masthead nav,
+  .skip {
+    display: none;
+  }
 }
