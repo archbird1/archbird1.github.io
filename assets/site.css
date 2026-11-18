@@ -91,16 +91,16 @@
 }
 
 .theme-hitherto {
-  --p-bg: #EEE4D2;
-  --p-text: #33241A;
-  --p-dim: #725F4C;
-  --p-accent: #6A3812;
-  --p-line: #C4AF8D;
+  --p-bg: #F4EFE7;
+  --p-text: #2B1E16;
+  --p-dim: #6B5A4B;
+  --p-accent: #5B3A24;
+  --p-line: #CDBDA6;
   --p-font: "Lora", Georgia, serif;
   --p-weight: 600;
   --p-radius: 18px;
   --accent: #D7C5A7;
-  --accent-strong: #EEE4D2;
+  --accent-strong: #F4EFE7;
 }
 
 .theme-trench {
