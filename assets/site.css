@@ -1,10 +1,10 @@
 /* Lohm Lab — lohm.dev
    One stylesheet for every page. The legal pages add /legal.css on top.
 
-   The homepage is the Lab: the studio's own dark green look. One section
+   The homepage is the Lab: the studio's own Ink-well teal look. One section
    of it, the workshop, has dot-grid paper and handwritten notes.
    Each app page opens in that app's default colors and typeface, then
-   settles back into studio green with the app's accent.
+   settles back into Ink-well with the app's accent.
 
    Type: Bricolage Grotesque for the studio, Architects Daughter for the
    handwritten notes, and each app's own face on its own page.
@@ -50,15 +50,15 @@
 :root {
   color-scheme: dark;
 
-  /* Studio color */
-  --bg: #091A17;             /* deep green-black */
-  --surface: #10241F;        /* cards */
-  --surface-2: #163029;      /* raised detail */
-  --line: #29483D;           /* rules and borders */
-  --ink: #E6EEE8;            /* text */
-  --muted: #A0B2A8;          /* secondary text */
-  --accent: #73CDB5;         /* sea green: the studio's color */
-  --accent-strong: #9BE2CE;  /* hover */
+  /* Studio color: Ink-well */
+  --bg: #071A1C;             /* ink-well: deep teal-black */
+  --surface: #0E2427;        /* cards */
+  --surface-2: #142F33;      /* raised detail */
+  --line: #264A4D;           /* rules and borders */
+  --ink: #E4EEEE;            /* text */
+  --muted: #9DB3B3;          /* secondary text */
+  --accent: #5FC2B8;         /* ink-well teal: the studio's color */
+  --accent-strong: #8ADDD4;  /* hover */
   --amber: #D6AD70;          /* status and small marks only */
 
   /* Type */
@@ -78,11 +78,11 @@
 /* Each app's default look, copied from the apps. */
 
 .theme-clk-01 {
-  --p-bg: #041014;
+  --p-bg: #05090A;
   --p-text: #E8FFFD;
-  --p-dim: #7FA8AB;
+  --p-dim: #86A9AC;
   --p-accent: #3FF2FF;
-  --p-line: #1C5C66;
+  --p-line: #1E3A3E;
   --p-font: "Droid Sans Mono", ui-monospace, Menlo, monospace;
   --p-weight: 400;
   --p-radius: 2px;
@@ -93,7 +93,7 @@
 .theme-hitherto {
   --p-bg: #F4EFE7;
   --p-text: #2B1E16;
-  --p-dim: #6B5A4B;
+  --p-dim: #655546;
   --p-accent: #5B3A24;
   --p-line: #CDBDA6;
   --p-font: "Lora", Georgia, serif;
@@ -144,7 +144,7 @@ body {
 
 /* A soft sea-green glow behind the top of the homepage. */
 body.home {
-  background-image: radial-gradient(52rem 38rem at 85% 4rem, rgba(115, 205, 181, 0.13), transparent 70%);
+  background-image: radial-gradient(52rem 38rem at 85% 4rem, rgba(95, 194, 184, 0.13), transparent 70%);
   background-repeat: no-repeat;
 }
 
@@ -352,7 +352,7 @@ a:hover {
   margin-block: 0 var(--gap);
   padding: clamp(1.5rem, 5vw, 3.5rem);
   background-color: var(--surface);
-  background-image: radial-gradient(circle at 1px 1px, rgba(160, 178, 168, 0.22) 1px, transparent 1.5px);
+  background-image: radial-gradient(circle at 1px 1px, rgba(157, 179, 179, 0.22) 1px, transparent 1.5px);
   background-size: 24px 24px;
   border: 1px solid var(--line);
   border-radius: var(--radius);
