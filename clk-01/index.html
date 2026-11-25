@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CLK-01: Chess Clock | Lohm Lab</title>
-<meta name="description" content="CLK-01 is a free chess clock for Android with player profiles, game history and casual tournaments. No ads, no accounts, fully offline.">
+<meta name="description" content="CLK-01 is a free, offline chess clock for Android: increment, delay or Bronstein timing, undo, time adjustments and game recovery. No ads, no account.">
 <link rel="canonical" href="https://lohm.dev/clk-01/">
 <meta name="theme-color" content="#071A1C">
 <meta property="og:site_name" content="Lohm Lab">
 <meta property="og:type" content="website">
 <meta property="og:title" content="CLK-01: Chess Clock | Lohm Lab">
-<meta property="og:description" content="CLK-01 is a free chess clock for Android with player profiles, game history and casual tournaments. No ads, no accounts, fully offline.">
+<meta property="og:description" content="CLK-01 is a free, offline chess clock for Android: increment, delay or Bronstein timing, undo, time adjustments and game recovery. No ads, no account.">
 <meta property="og:url" content="https://lohm.dev/clk-01/">
 <meta property="og:image" content="https://lohm.dev/assets/og.png">
 <meta property="og:image:width" content="1200">
@@ -40,7 +40,7 @@
     <div>
       <h1>CLK-01</h1>
       <p class="kind">Chess Clock</p>
-      <p class="lead">A chess clock for over-the-board games at home. Lay one phone on its side between two players. It keeps the time, then keeps the record.</p>
+      <p class="lead">A chess clock for the board in front of you. Lay one phone on its side between two players, and it keeps the time. Nothing more.</p>
       <p class="plate-status">In development</p>
     </div>
     <img src="/assets/icons/clk-01.png" alt="" width="176" height="176">
@@ -56,7 +56,7 @@
         <dt>Internet</dt><dd>Never used. The app has no permission to go online.</dd>
         <dt>Permissions</dt><dd>Vibration only.</dd>
         <dt>Screen</dt><dd>Landscape</dd>
-        <dt>Your data</dt><dd>Stays on your phone. You can export everything to a backup file and import it again.</dd>
+        <dt>Your data</dt><dd>Your settings, custom time controls and the game in progress are kept on your phone. The app never sends them anywhere.</dd>
       </dl>
     </div>
   </section>
@@ -65,32 +65,36 @@
     <div class="band-body">
       <h3>The clock</h3>
       <ul>
-        <li>Opens straight onto the clock. Tap a side to choose that player, pick a time control and press Start.</li>
-        <li>Ten built-in time controls, from 5 minutes a side to 90 minutes with a 30-second increment. An increment is extra time added to your clock after each move.</li>
-        <li>Custom time controls, including uneven times for a handicap game.</li>
-        <li>The clocks wait until the dark side taps, which starts light&rsquo;s clock.</li>
-        <li>Resign, draw offers, pause and a move counter.</li>
-        <li>Flag rules as played over the board: running out of time is a loss, or a draw if your opponent could not possibly checkmate.</li>
+        <li>Opens straight onto the clock. Pick a time control, and the clocks wait until dark taps, which starts light&rsquo;s clock.</li>
+        <li>Ten built-in time controls, from 1 minute a side to 30. A control like 3|2 means 3 minutes each, plus 2 seconds after every move.</li>
+        <li>Custom time controls with your own label, including uneven times for a handicap game.</li>
+        <li>Swap colors or swap times before the game starts.</li>
       </ul>
-      <h3>Players and records</h3>
+      <h3>Three kinds of bonus time</h3>
       <ul>
-        <li>Player profiles with a photo or a chess-piece placeholder.</li>
-        <li>Each player&rsquo;s record overall, as light and as dark.</li>
-        <li>Rivalries: the head-to-head record between any two players.</li>
-        <li>A full history of every game played.</li>
+        <li><strong>Increment:</strong> seconds added to your clock after each move.</li>
+        <li><strong>Delay:</strong> a few free seconds at the start of each turn before your clock starts running down.</li>
+        <li><strong>Bronstein:</strong> after each move, you get back the time you used, up to the bonus.</li>
       </ul>
-      <h3>Titles and tournaments</h3>
+      <h3>During a game</h3>
       <ul>
-        <li>House Champion, a belt that changes hands whenever the champion is beaten.</li>
-        <li>Tournaments in three formats: Swiss, single elimination and round robin.</li>
-        <li>A Tournament Champion title for each winner. Players choose up to three titles to show on their card.</li>
+        <li>Pause at any time. While paused, either player&rsquo;s time can be adjusted, from a button along that player&rsquo;s own edge of the screen.</li>
+        <li>Undo a mis-tap. The time since the tap is charged to the player who tapped, so undo never hands out free thinking time.</li>
+        <li>A move counter, a low-time warning, and optional sounds and vibration.</li>
+        <li>Keeps the screen awake during a game.</li>
+        <li>If your phone closes the app mid-game, the game is offered back when you return.</li>
+      </ul>
+      <h3>Its look</h3>
+      <ul>
+        <li>Four color palettes: Viridian, Graphite, Amethyst and Ink-well. Corners and font can be changed too.</li>
       </ul>
     </div>
   </section>
   <section class="band">
     <h2>What it isn’t</h2>
     <div class="band-body">
-      <p>CLK-01 is for casual play. It is not a certified clock for rated or official games, and its tournaments are made for the kitchen table.</p>
+      <p>CLK-01 is a clock and only a clock. It keeps no player profiles and no game history.</p>
+      <p>It is for casual play, not a certified clock for rated or official games. Check with your organizer before relying on it for anything official.</p>
       <p>It is not affiliated with FIDE, US Chess, Chess.com or Lichess.</p>
     </div>
   </section>
